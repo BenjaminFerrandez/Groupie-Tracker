@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'SF-regular';
+    src: url("../font/SF-Pro-Display-Light.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF-bold";
+    src: url("../font/SF-Pro-Display-Heavy.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SF-thin";
+    src: url("../font/SF-Pro-Display-Thin.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #f5f5f7;
+    overflow: scroll;
+}
+
+h1, h3 {
+    text-align: center;
+    font-family: SF-bold, serif;
+}
+
+.containerBox {
+    display: flex;
+    justify-content: center;
+}
+
+.containerSlide {
+    display: flex;
+    justify-content: center;
+}
+
+
+.select1, .select2, .presentation{
+    font-family: SF-regular, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+    margin: 30px;
+    -webkit-transition: .3s;
+}
+
+.select1, .select2 {
+    height: 29.41176rem;
+    width: 18rem;
+}
+
+.playlogo {
+    height: 120px;
+}
+
+@media (max-width: 768px) {
+    .select1, .select2 {
+        height: 22.87581rem;
+        width: 16rem;
+    }
+    .playlogo {
+        height: 106.6px;
+    }
+}
+
+@media (max-width: 425px) {
+    .select1,.select2 {
+        height: 16.33986rem;
+        width: 10rem;
+    }
+    .playlogo {
+        height: 66.6px;
+    }
+}
+
+@media (max-width: 375px) {
+    .select1, .select2 {
+        height: 13.07189rem;
+        width: 8rem;
+    }
+    .playlogo {
+        height: 53.3px;
+    }
+}
+
+@media (max-width: 320px) {
+    .select1, .select2 {
+        height: 11.43790rem;
+        width: 7rem;
+    }
+    .playlogo {
+        height: 46.6px;
+    }
+}
+
+.presentation {
+    background-color: #e3e3e3;
+    border-color: transparent;
+    padding: 10px;
+    font-family: SF-regular, sans-serif;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.presentation:hover {
+    background-color: #e5e6e5;
+}
+
+.select1:hover,.select2:hover {
+    box-shadow: 4px 8px 24px rgba(0,0,0,.18);
+    transform: scale(1.02,1.02);
+    transition: .3s;
+}
+
+footer {
+    display: block;
+    margin-top: 20px;
+    background-color: #f5f5f7;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footeritem {
+    display: block;
+    font-family: SF-regular, sans-serif;
+    margin-block-start: -0.5em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
