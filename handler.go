@@ -51,7 +51,7 @@ func errorHandler(w http.ResponseWriter, r *http.Request, status int) {
 // collection of webpage handlers
 func HandleRequests() {
 	fmt.Println("Starting Server at Port 8080")
-	fmt.Println("now open a broswer and enter: localhost:8080 into the URL")
+	fmt.Println("now open a broswer and enter 'localhost:8080' into the URL")
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/artistInfo", artistPage)
 	http.HandleFunc("/locations", returnAllLocations)
