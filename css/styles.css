@@ -1,7 +1,7 @@
 body{
     background-color: black;
-    background-image: url(../css/BG.png);
-    background-size: cover;
+    background-image: url(../css/BG.jpg);
+    background-size: ;
 }
 
 .container {
@@ -25,34 +25,48 @@ body{
 }
 
 .container input{
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 30px;
     animation-duration: 4s;
     animation-name: slidein;
 }
 #Title{
     text-align: center;
-    color: yellow;
+    color: #89CFF0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     animation-duration: 4s;
-    animation-name: slidein;
+    animation-name: slideinImg;
+    background-position: initial;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 200px;
+    border-radius: 50px;
+
+}
+
+.divBlack {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flip-card {
     background-color: transparent;
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
+
+
     /* perspective: 500px; Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     text-align: center;
-    transition: transform 0.45s;
+    transition: transform 1s;
     transform-style: preserve-3d;
 
 }
@@ -65,10 +79,11 @@ body{
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -76,10 +91,12 @@ body{
 /* Style the back side */
 .flip-card-back {
     transform: rotateY(180deg);
+    opacity: 85%;
+
 }
 
 #back{
-    background-color: yellow;
+    background-color: #eb6b34;
     font-weight: 900;
     font-size: small;
     color: black;
@@ -120,7 +137,7 @@ body{
 
 .name{
     font-size: xx-large;
-    color: yellow;
+    color: #89CFF0;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 30px;
@@ -129,7 +146,7 @@ body{
 }
 
 .members{
-    background-color: yellow;
+    background-color: #89CFF0;
     border-radius: 30px;
     border-color: black;
     border-width: 20px;
@@ -139,7 +156,7 @@ body{
 }
 
 .creation{
-    background-color: yellow;
+    background-color: #89CFF0;*
     border-radius: 30px;
     border-color: black;
     border-width: 20px;
@@ -149,7 +166,7 @@ body{
 }
 
 .firstAlbum{
-    background-color: yellow;
+    background-color: #89CFF0;
     border-radius: 30px;
     border-color: black;
     border-width: 20px;
@@ -159,7 +176,7 @@ body{
 }
 
 .DatesLocations{
-    background-color: yellow;
+    background-color: #89CFF0;
     border-radius: 30px;
     border-color: black;
     border-width: 20px;
@@ -180,7 +197,7 @@ bdy{
     color: black;
     font-family: "Verdana";
     font-size: large;
-    background-color: yellow;
+    background-color: #89CFF0;
     border-radius: 50px;
     padding: 20px;
 }
