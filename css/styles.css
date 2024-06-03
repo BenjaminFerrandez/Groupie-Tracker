@@ -33,7 +33,7 @@ body{
 }
 #Title{
     text-align: center;
-    color: #e40d9e;
+    color: #89CFF0;
     font-family: Bradley Hand, cursive;
     animation-duration: 4s;
     animation-name: slideinImg;
@@ -152,7 +152,7 @@ body{
 
 .creation{
     background-color: #89CFF0;
-    border-radius: 35px;
+    border-radius: 30px;
     border-color: black;
     border-width: 20px;
     text-align: center;
