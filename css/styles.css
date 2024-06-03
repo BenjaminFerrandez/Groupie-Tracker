@@ -1,7 +1,7 @@
 body{
     background-color: black;
     background-image: url(../css/BG.jpg);
-    background-size: ;
+    background-size: auto;
 }
 
 .container {
@@ -34,7 +34,7 @@ body{
 #Title{
     text-align: center;
     color: #89CFF0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Bradley Hand, cursive;
     animation-duration: 4s;
     animation-name: slideinImg;
     background-position: initial;
@@ -97,39 +97,30 @@ body{
 
 #back{
     background-color: #eb6b34;
-    font-weight: 900;
-    font-size: small;
+    font-size: 20px;
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Bradley Hand, cursive;
     grid-row-start:2 ;
     grid-column-start: 2;
     cursor:pointer;
     border: none;
 }
 
-@keyframes slideinImg {
-    from {
-        margin-left: 600%;
 
-    }
-
-    to {
-        margin-right: 0%;
-
-    }
-}
 
 .image, img{
     text-align: center;
     border-radius: 30px;
     animation-duration: 3s;
     animation-name: slideinImg;
+    opacity: 95%;
+
 }
 
 .box{
     display: flex;
     justify-content: space-around;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Bradley Hand, cursive;
     color: black;
     animation-duration: 3s;
     animation-name: slidein;
@@ -137,12 +128,14 @@ body{
 
 .name{
     font-size: xx-large;
-    color: #89CFF0;
+    color: #eb6b34;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Bradley Hand, cursive;
     border-radius: 30px;
     animation-duration: 2s;
     animation-name: slidein;
+    opacity: 85%;
+
 }
 
 .members{
@@ -153,16 +146,20 @@ body{
     text-align: center;
     align-self: center;
     padding: 10px;
+    opacity: 90%;
+
 }
 
 .creation{
-    background-color: #89CFF0;*
-    border-radius: 30px;
+    background-color: #89CFF0;
+    border-radius: 35px;
     border-color: black;
     border-width: 20px;
     text-align: center;
     align-self: center;
     padding: 10px;
+    opacity: 90%;
+
 }
 
 .firstAlbum{
@@ -173,6 +170,8 @@ body{
     text-align: center;
     align-self: center;
     padding: 10px;
+    opacity: 90%;
+
 }
 
 .DatesLocations{
@@ -183,6 +182,7 @@ body{
     text-align: center;
     align-content: center;
     padding: 10px;
+    opacity: 90%;
 }
 
 bdy{
@@ -195,9 +195,13 @@ bdy{
     grid-column-start: 2;
     text-align: center;
     color: black;
-    font-family: "Verdana";
+    font-family: Bradley Hand, cursive;
     font-size: large;
     background-color: #89CFF0;
     border-radius: 50px;
     padding: 20px;
+}
+
+form {
+
 }
