@@ -10,8 +10,7 @@ func main() {
 	HandleRequests()
 }
 
-// home page handler which executes the template.html file.
-// Tells server what enpoints users hit.
+//home page handler which executes the index.html file.
 func homePage(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		errorHandler(w, r, http.StatusNotFound)
@@ -19,7 +18,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Println("Endpoint Hit: returnAllArtists")
 	data := ArtistData()
-	t, err := template.ParseFiles("template/template.html")
+	t, err := template.ParseFiles("template/index.html")
 	if err != nil {
 		errorHandler(w, r, http.StatusInternalServerError)
 		return

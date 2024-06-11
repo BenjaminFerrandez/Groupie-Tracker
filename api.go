@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-//collates the data taken from all API structs.
+//take the data from all API structs.
 type Data struct {
 	A Artist
 	R Relation
@@ -18,27 +18,34 @@ type Data struct {
 
 //stores data from artist API struct.
 type Artist struct {
-	Id           uint     `json:"id"`
-	Name         string   `json:"name"`
-	Image        string   `json:"image"`
-	Members      []string `json:"members"`
-	CreationDate uint     `json:"creationDate"`
-	FirstAlbum   string   `json:"firstAlbum"`
+	Id 			 int 				`json:"id"`
+	Image        string   			`json:"image"`
+	Name         string    			`json:"name"`
+	Members      []string			`json:"members"`
+	CreationDate int				`json:"creationDate"`
+	FirstAlbum   string				`json:"firstAlbum"`
+	Locations 	 Location			`json:"locations"`
+	ConcertDates Date				`json:"concertDates"`
+	Relations    Relation			`json:"relations"`
+	Dates        [][]string
 }
 
 //stores data from location API struct.
 type Location struct {
-	Locations []string `json:"locations"`
+	Id 			 int				`json:"id"`
+	Locations    []string			`json:"locations"`
 }
 
 //stores data from date API struct.
 type Date struct {
-	Dates []string `json:"dates"`
+	Id 			 int				`json:"id"`
+	Dates 		 []string			`json:"dates"`
 }
 
 //stores data from relation API struct.
 type Relation struct {
-	DatesLocations map[string][]string `json:"datesLocations"`
+	Id			   int						`json:"id"`
+	DatesLocations map[string][]string		`json:"datesLocations"`
 }
 
 type Text struct {
@@ -46,9 +53,17 @@ type Text struct {
 	ErrorMes string
 }
 
-// the slices of structs are used to index the data of each artist from APIs.
-// the map[string]json.RawMessage variables are used to unmarshal another layer
-// when multiple layers are present.
+type Structure struct {
+	artists		  []Artist
+	artistsTemp   []Artist
+	numberOfGroup int
+	action		  string
+}
+
+type WebStruct struct {
+	Artists []Artist
+}
+
 var (
 	artistInfo   []Artist
 	locationMap  map[string]json.RawMessage
@@ -156,7 +171,7 @@ func RelationData() []Relation {
 	return relationInfo
 }
 
-//collates the data taken from all API slices into one data struct.
+//take the data from all API slices into one data struct.
 func collectData() []Data {
 	ArtistData()
 	RelationData()

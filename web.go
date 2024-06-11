@@ -1,15 +1,13 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"html/template"
 	"net/http"
+	"strings"
 )
 
 //handles the artist Page when artist image is clicked by receiving "ArtistName" value
-// and comparing it to the names in Data.Artist.Name field.
-// Tells server what enpoints users hit.
 func artistPage(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/artistInfo" {
 		errorHandler(w, r, http.StatusNotFound)
@@ -36,23 +34,35 @@ func artistPage(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w, b)
 }
 
-// Tells server what enpoints users hit.
-// displays location data as a JSON raw message on webpage.
-func returnAllLocations(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint Hit: returnAllLocations")
-	json.NewEncoder(w).Encode(LocationData())
+//search bar (doesn't work :( )
+func (g *Structure) searchGroup(str string) {
+	g.artistsTemp = []Artist{}
+	for i := 0; i < len(g.artists); i++ {
+		if strings.Contains(strings.ToLower(g.artists[i].Name), strings.ToLower(str)) {
+			g.artistsTemp = append(g.artistsTemp, g.artists[i])
+		}
+		for j := 0; j < len(g.artists[i].Members); j++ {
+			if strings.Contains(strings.ToLower(g.artists[i].Members[j]), strings.ToLower(str)) {
+				g.artistsTemp = append(g.artistsTemp, g.artists[i])
+			}
+		}
+	}
 }
 
-// Tells server what enpoints users hit.
-// displays dates data as a JSON raw message on webpage.
-func returnAllDates(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint Hit: returnAllDates")
-	json.NewEncoder(w).Encode(DatesData())
-}
+func (g *Structure) index(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("pages/index.html"))
+	r.ParseForm()
+	action := r.Form.Get("action")
+	g.action = action
 
-// Tells server what enpoints users hit.
-// displays relation data as a JSON raw message on webpage.
-func returnAllRelation(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint Hit: returnAllRelation")
-	json.NewEncoder(w).Encode(RelationData())
+	search := r.Form.Get("search")
+	if len(search) > 0 {
+		g.searchGroup(search)
+	}
+
+	web := WebStruct{Artists: g.artistsTemp}
+	err := tmpl.Execute(w, web)
+	if err != nil {
+		return
+	}
 }
